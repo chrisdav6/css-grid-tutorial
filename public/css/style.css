@@ -274,19 +274,44 @@ h1 {
   color: #03afc2;
   line-height: 1;
   font-size: 3.125rem; }
-  h1 span {
-    font-size: 5.5rem;
-    letter-spacing: 0.3em;
-    color: #03afc2;
-    text-transform: uppercase;
-    line-height: 1;
-    font-family: "Six Caps", sans-serif;
-    display: block; }
 
 h2 {
   font-size: 2rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   color: #606060;
   text-transform: uppercase;
   line-height: 1;
   font-family: "Six Caps", sans-serif; }
+
+.welcome {
+  background-image: url(../img/header-bg.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .welcome h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #223843;
+    line-height: 2;
+    text-align: center; }
+    .welcome h1 span {
+      font-size: 5.5rem;
+      letter-spacing: 0.2em;
+      color: #03afc2;
+      text-transform: uppercase;
+      line-height: 1;
+      font-family: "Six Caps", sans-serif;
+      display: block; }
+    .welcome h1::before, .welcome h1::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 1px;
+      background: #223843; }
+    .welcome h1::before {
+      margin: 0 auto 2em; }
+    .welcome h1::after {
+      margin: 2.3em auto 0; }
