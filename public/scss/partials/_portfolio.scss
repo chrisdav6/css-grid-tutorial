@@ -1,0 +1,114 @@
+.portfolio {
+  text-align: center;
+  background: $light-gray;
+  padding: 5em 0;
+}
+
+.portfolio-items {
+  @include container($max-width: 65em);
+}
+
+//Flexbox fallback
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-items img {
+  width: 100%;
+}
+
+.portfolio-item {
+  width: 50%;
+}
+
+.portfolio-item.featured {
+  width: 100%;
+  order: -1;
+}
+//End of Flexbox Fallback
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  
+  img {
+    display: block;
+  }
+  
+  figcaption {
+    position: absolute;
+    background: rgba($accent, .5);
+    top: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 2em;
+    color: $white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: top ease-in-out 250ms;
+  }
+  
+  &:hover figcaption,
+  &:focus figcaption {
+    top: 0;
+  }
+}
+
+.portfolio-title {
+  color: $white;
+  font-size: 2.5rem;
+  margin-bottom: auto;
+  
+  .featured & {
+    font-size: 5rem;
+  }
+}
+
+.portfolio-desc {
+  display: none;
+  
+  .featured & {
+    display: block;
+  }
+}
+
+.portfolio-link {
+  color: $white;
+  font-weight: $fw-b;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 3px solid $white;
+  align-self: flex-start; //contains underline to the width of the link
+  
+  &::after {
+    content: url(../img/arrow-white.svg);
+    display: inline-block;
+    height: .8em;
+    width: .8em;
+    margin-left: .5em;
+  }
+}
+
+@supports(display: grid) {
+  .portfolio-item {
+    width: 100%;
+  }
+  
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .portfolio-item.featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+
+
+
+
