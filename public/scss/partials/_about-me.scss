@@ -1,0 +1,47 @@
+.about-me {
+  @extend %container;
+  @extend %clearfix;
+  margin-top: 2em;
+}
+
+.about-img {
+  max-height: 25em;
+}
+
+.about-img { //Fallback for browsers that dont support css grids
+  @media(min-width: 42em) {
+    float: left;
+    margin-right: 1em;
+  }
+}
+
+.about-title {
+  margin-bottom: .5em;
+}
+
+.about-subtitle {
+  margin: 0.5em 0;
+}
+
+@supports(display: grid) {
+  .about-me {
+    display: grid;
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [image-end] 2fr [port-end];
+  }
+  
+  .about-img {
+    grid-column: port-start / image-end;
+    grid-row: 1 / 2;
+  }
+  
+  .about-title {
+    grid-column: name-start / port-end;
+    grid-row: 1 / 2;
+    align-self: end;
+  }
+  
+  .about-subtitle,
+  .about-text {
+    grid-column: port / port;
+  }
+}
