@@ -11,6 +11,37 @@
 form {
   display: flex;
   flex-direction: column;
+  
+  @supports(display: grid) {
+    @include mq {
+      display: grid;
+      grid-cloumn: 1fr 1fr;
+      grid-column-gap: 1em;
+      grid-template-areas:
+      "name      email"
+      "message message"
+      "  .      send-btn";
+      
+      .name {
+        grid-area: name;
+      }
+      
+      .email {
+        grid-area: email;
+      }
+      
+      .message {
+        grid-area: message;
+        textarea {
+          height: 10em;
+        }
+      }
+      
+      .send-btn {
+        grid-area: send-btn;
+      }
+    }
+  }
 }
 
 label {
