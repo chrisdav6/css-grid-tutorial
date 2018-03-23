@@ -302,6 +302,64 @@ h2 {
     h2 {
       font-size: 3rem; } }
 
+.menu-button {
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none; }
+
+.menu-button img {
+  width: 30px; }
+
+nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 15%;
+  z-index: 10; }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: stretch;
+  background: #03afc2; }
+
+nav li {
+  border-bottom: 1px solid #223843;
+  text-align: center; }
+
+nav li:last-child {
+  border-bottom: none; }
+
+nav li:hover,
+nav li:focus {
+  background: #028290; }
+
+nav a {
+  display: inline-block;
+  font-size: 2.5rem;
+  letter-spacing: 0.2em;
+  color: #223843;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Six Caps", sans-serif;
+  text-decoration: none;
+  padding: calc(100vh/8);
+  width: 100%;
+  line-height: 0; }
+  @media (min-width: 50em) {
+    nav a {
+      font-size: 4rem; } }
+
 .welcome {
   background-image: url(../img/header-bg.png);
   background-size: cover;
@@ -309,7 +367,8 @@ h2 {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
   .welcome h1 {
     font-size: 1.5rem;
     font-weight: 400;

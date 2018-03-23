@@ -1,0 +1,61 @@
+.menu-button {
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.menu-button img {
+  width: 30px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 15%;
+  z-index: 10;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: stretch;
+  background: $accent;
+}
+
+nav li {
+  border-bottom: 1px solid $dark-blue;
+  text-align: center;
+}
+
+nav li:last-child {
+  border-bottom: none;
+}
+
+nav li:hover,
+nav li:focus {
+  background: darken($accent, 10%);
+}
+
+nav a {
+  display: inline-block;
+  @include sans-serif($fs: 2.5rem, $color: $dark-blue);
+  text-decoration: none;
+  padding: calc(100vh/8); //vertical clickable Area
+  width: 100%; //horizontal clickable area
+  line-height: 0;
+  
+  @include mq {
+    font-size: 4rem;
+  }
+}
