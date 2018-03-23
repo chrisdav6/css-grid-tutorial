@@ -63,15 +63,14 @@ nav a {
   }
 }
 
-.container-all {
-  transition: transform ease-out 250ms;
-}
-
 .closeicon {
   display: none;
 }
 
 .nav-is-open {
+  height: 100vh;
+  overflow-y: hidden;
+  
   nav {
     transform: translateX(0);
   }
