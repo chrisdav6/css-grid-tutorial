@@ -19,6 +19,9 @@ nav {
   left: 0;
   right: 15%;
   z-index: 10;
+  
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms;
 }
 
 nav ul {
@@ -57,5 +60,35 @@ nav a {
   
   @include mq {
     font-size: 4rem;
+  }
+}
+
+.container-all {
+  transition: transform ease-out 250ms;
+}
+
+.closeicon {
+  display: none;
+}
+
+.nav-is-open {
+  nav {
+    transform: translateX(0);
+  }
+  
+  .container-all {
+    transform: translateX(85%);
+  }
+  
+  .closeicon {
+    display: block;
+  }
+  
+  .openicon {
+    display: none;
+  }
+  
+  .menu-button {
+    transform: translateX(-80%);
   }
 }

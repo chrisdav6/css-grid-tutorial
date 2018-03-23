@@ -320,7 +320,9 @@ nav {
   bottom: 0;
   left: 0;
   right: 15%;
-  z-index: 10; }
+  z-index: 10;
+  transform: translateX(-100%);
+  transition: transform ease-out 250ms; }
 
 nav ul {
   margin: 0;
@@ -359,6 +361,27 @@ nav a {
   @media (min-width: 50em) {
     nav a {
       font-size: 4rem; } }
+
+.container-all {
+  transition: transform ease-out 250ms; }
+
+.closeicon {
+  display: none; }
+
+.nav-is-open nav {
+  transform: translateX(0); }
+
+.nav-is-open .container-all {
+  transform: translateX(85%); }
+
+.nav-is-open .closeicon {
+  display: block; }
+
+.nav-is-open .openicon {
+  display: none; }
+
+.nav-is-open .menu-button {
+  transform: translateX(-80%); }
 
 .welcome {
   background-image: url(../img/header-bg.png);
