@@ -517,9 +517,6 @@ nav a {
   display: flex;
   flex-wrap: wrap; }
 
-.portfolio-items img {
-  width: 100%; }
-
 .portfolio-item {
   width: 50%; }
 
@@ -530,8 +527,9 @@ nav a {
 .portfolio-item {
   position: relative;
   overflow: hidden; }
-  .portfolio-item img {
-    display: block; }
+  .portfolio-item .portfolio-image {
+    display: block;
+    width: 100%; }
   .portfolio-item figcaption {
     position: absolute;
     background: rgba(3, 175, 194, 0.5);
@@ -587,6 +585,89 @@ nav a {
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2; } }
+
+.portfolio-modal {
+  position: fixed;
+  z-index: 10;
+  top: 2em;
+  bottom: 2em;
+  left: 2em;
+  right: 2em;
+  background: #fff;
+  box-shadow: 0 0 0 5em rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.modal-button {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: #fff;
+  border-radius: 100%;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  transition: background 250ms; }
+
+.modal-button:hover {
+  background: #c6f9fe; }
+
+.modal-button img {
+  width: 30px;
+  height: 35px;
+  padding-top: 4px; }
+
+.portfolio-header {
+  text-align: left;
+  padding: 5em 0;
+  margin-bottom: 2em; }
+
+.portfolio-header:nth-of-type(1) {
+  background-image: url(../img/portfolio-01.jpg);
+  background-size: cover;
+  background-position: center; }
+
+.portfolio-title-box {
+  background: rgba(3, 175, 194, 0.75);
+  padding: 3em 0 3em 2em;
+  color: #fff;
+  width: 70%; }
+  .portfolio-title-box .portfolio-title {
+    font-size: 3.5rem; }
+    .portfolio-title-box .portfolio-title::after {
+      content: "";
+      display: block;
+      margin: .5em 0;
+      width: 75%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.7); }
+
+.portfolio-subtitle {
+  font-size: 1.25rem; }
+
+.portfolio-content {
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 2em; }
+
+.portfolio-full-width {
+  width: 100vw;
+  max-width: initial;
+  margin: 2em calc(50% - 50vw);
+  height: 20vh;
+  object-fit: cover; }
+
+@media (min-width: 50em) {
+  .portfolio-pull-left {
+    width: 65%;
+    float: left;
+    margin-right: 2em; }
+  .portfolio-pull-right {
+    width: 65%;
+    float: right;
+    margin-left: 2em; } }
 
 .contact {
   width: 90%;

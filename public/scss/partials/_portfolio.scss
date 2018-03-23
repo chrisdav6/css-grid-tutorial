@@ -14,10 +14,6 @@
   flex-wrap: wrap;
 }
 
-.portfolio-items img {
-  width: 100%;
-}
-
 .portfolio-item {
   width: 50%;
 }
@@ -32,8 +28,9 @@
   position: relative;
   overflow: hidden;
   
-  img {
+  .portfolio-image {
     display: block;
+    width: 100%;
   }
   
   figcaption {
@@ -109,6 +106,109 @@
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
+  }
+}
+
+//Modals
+
+.portfolio-modal {
+  position: fixed;
+  z-index: 10;
+  top: 2em;
+  bottom: 2em;
+  left: 2em;
+  right: 2em;
+  background: $white;
+  box-shadow: 0 0 0 5em rgba(black, .5);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.modal-button {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: $white;
+  border-radius: 100%;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 5px rgba(black, .8);
+  transition: background 250ms;
+}
+
+.modal-button:hover {
+  background: lighten($accent, 50%);
+}
+
+.modal-button img {
+  width: 30px;
+  height: 35px;
+  padding-top: 4px;
+}
+
+.portfolio-header {
+  text-align: left;
+  padding: 5em 0;
+  margin-bottom: 2em;
+}
+
+.portfolio-header:nth-of-type(1) {
+  background-image: url(../img/portfolio-01.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.portfolio-title-box {
+  background: rgba($accent, .75);
+  padding: 3em 0 3em 2em;
+  color: $white;
+  width: 70%;
+  
+  .portfolio-title {
+    font-size: 3.5rem;
+    
+    &::after {
+      content: "";
+      display: block;
+      margin: .5em 0;
+      width: 75%;
+      height: 1px;
+      background: rgba($white, .7);
+    }
+  }
+}
+
+.portfolio-subtitle {
+  font-size: 1.25rem;
+}
+
+.portfolio-content {
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 2em;
+}
+
+.portfolio-full-width {
+  width: 100vw;
+  max-width: initial;
+  margin: 2em calc(50% - 50vw);
+  height: 20vh;
+  object-fit: cover;
+}
+
+@include mq {
+  .portfolio-pull-left {
+    width: 65%;
+    float: left;
+    margin-right: 2em;
+  }
+  
+  .portfolio-pull-right {
+    width: 65%;
+    float: right;
+    margin-left: 2em;
   }
 }
 
