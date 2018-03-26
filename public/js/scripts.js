@@ -25,11 +25,34 @@ portfolioContainer.addEventListener("click", (e) => {
   if(! modalToggle) return;
   
   const modal = modalToggle.parentNode.nextElementSibling;
-  const closebutton = document.querySelector(".modal-button");
+  const closebutton = modal.querySelector(".modal-button");
   
-  modal.classList.add("modal-is-open");
+  const modalOpen = () => {
+    modal.classList.add("modal-is-open");
+    modal.style.animation = "modalIn 500ms forwards";
+    document.body.style.overflowY = "hidden";
+  };
   
-  closebutton.addEventListener("click", () => {
+  const modalClose = () => {
     modal.classList.remove("modal-is-open");
+    modal.removeEventListener("animationend", modalClose);
+  };
+  
+  //Close modal when close button is pressed
+  closebutton.addEventListener("click", () => {
+    modal.style.animation = "modalOut 500ms forwards";
+    modal.addEventListener("animationend", modalClose);
+    document.body.style.overflowY = "scroll";
   });
+  
+  //Close modal when esc key is pressed
+  document.addEventListener("keydown", (e) => {
+    if(e.keyCode === 27) {
+      modal.style.animation = "modalOut 500ms forwards";
+      modal.addEventListener("animationend", modalClose);
+      document.body.style.overflowY = "scroll";
+    }
+  });
+  
+  modalOpen();
 });

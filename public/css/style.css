@@ -304,7 +304,7 @@ h2 {
       font-size: 3rem; } }
 
 .menu-button {
-  position: absolute;
+  position: fixed;
   top: 3em;
   left: 3em;
   background: transparent;
@@ -594,9 +594,11 @@ nav a {
   left: 2em;
   right: 2em;
   background: #fff;
-  box-shadow: 0 0 0 5em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 40em rgba(0, 0, 0, 0.5);
   overflow-y: scroll;
   overflow-x: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
   display: none; }
 
 .modal-is-open {
@@ -625,12 +627,24 @@ nav a {
 .portfolio-header {
   text-align: left;
   padding: 5em 0;
-  margin-bottom: 2em; }
-
-.portfolio-header:nth-of-type(1) {
-  background-image: url(../img/portfolio-01.jpg);
+  margin-bottom: 2em;
   background-size: cover;
   background-position: center; }
+
+.header-1 {
+  background-image: url(../img/portfolio-01.jpg); }
+
+.header-2 {
+  background-image: url(../img/portfolio-02.jpg); }
+
+.header-3 {
+  background-image: url(../img/portfolio-03.jpg); }
+
+.header-4 {
+  background-image: url(../img/portfolio-04.jpg); }
+
+.header-5 {
+  background-image: url(../img/portfolio-05.jpg); }
 
 .portfolio-title-box {
   background: rgba(3, 175, 194, 0.75);
@@ -672,6 +686,18 @@ nav a {
     width: 65%;
     float: right;
     margin-left: 2em; } }
+
+@keyframes modalIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes modalOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 .contact {
   width: 90%;
